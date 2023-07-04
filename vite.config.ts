@@ -19,7 +19,7 @@ export default defineConfig({
             fileName: (format) => `coach-components.${format}.js`,
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'tailwindcss', 'daisyui'],
+            external: ['react', 'react-dom', 'tailwindcss', 'daisyui', '@heroicons/react'],
             output: {
                 globals: {
                     react: 'React',

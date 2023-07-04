@@ -9,8 +9,6 @@ const allThemes = [
 ]
 
 export const decorators: Decorator[] = [
-  // temporary type checking fix until sb 7.1 is stable and addon-styling is updated (currently using alpha preview of sb7.1)
-  // @ts-ignore
   withThemeByDataAttribute({
     themes: Object.fromEntries(allThemes.map(v => ([v, v]))),
     defaultTheme: 'dark',
@@ -20,7 +18,9 @@ export const decorators: Decorator[] = [
 
 const preview: Preview = {
   parameters: {
-    backgrounds: false,
+    backgrounds: {
+      disable: true,
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
